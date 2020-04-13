@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "System",
+    "lib": [
+      "DOM",
+      "es2015",
+      "es5"],
+    "types": ["jquery"],
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "forceConsistentCasingInFileNames": false,
+    "rootDir": "./",
+    "outFile": "./assets/js/app.js",
+    "baseUrl": "./",    
+    "declaration": false
+  },
+  "files": ["sources/ts/build/app.ts"],
+  "exclude": ["node_modules", "**/*.spec.ts"]
+}
