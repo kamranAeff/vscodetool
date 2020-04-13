@@ -5,13 +5,12 @@
   - css
   - img
   - js
-- config
-  - tsconfig.json
 - source
   - scss
   - ts
 - index.html
 - Readme.md
+- tsconfig.json
 
 ### Git Global Ignore Config
 #### get configurations
