@@ -1,5 +1,7 @@
 # vscodetool
 
+<img src="typescript/assets/img/screen.png" alt="Ekran görüntüsü"/>
+
 ## File Structure
 - assets
   - css
