@@ -1,6 +1,6 @@
 # vscodetool
 
-![Ekran görüntüsü](typescript/assets/img/screen.png)
+![Ekran görüntüsü](https://github.com/kamranAeff/vscodetool/blob/master/TypeScript/assets/img/screen.png)
 
 ## File Structure
 - assets
