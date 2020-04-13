@@ -61,7 +61,7 @@
 > tsc app.ts   <kbd>OR</kbd>
 > tsc app.ts  --watch
 
-## Typescript Concat Modules
+## Typescript concat modules
 ### tasks.json
 <pre>
 {
@@ -85,6 +85,7 @@
 </pre>
 
 ### Typescript configuration file
+> tsc init
 <pre>
 {
   "compilerOptions": {
@@ -108,7 +109,7 @@
 }
 </pre> 
 
-## Include Jquery Module for TypeScript
+## Include Jquery module for TypeScript
 > npm install @types/jquery --save-dev
 
 
