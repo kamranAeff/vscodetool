@@ -97,18 +97,17 @@ namespace VsCodeTool
                     {
                         using (var sw = new StreamWriter(outputFile, true))
                         {
-                            sw.WriteLine($"/* *** Developed by Kamran A-eff *** */{Environment.NewLine}");
+                            sw.WriteLine($"/*\n*** Developed by Kamran A-eff *** \n*/{Environment.NewLine}");
                             foreach (var item in ns)
-                            {
                                 sw.WriteLine(File.ReadAllText(item.UsingName).ClearText());
-                            }
                         }
                     }
                 }
             }
-        end:
+            end:
             Console.WriteLine($"{Environment.NewLine}{Environment.NewLine}*** Developed by Kamran A-eff ***" +
-                $"\n  tsc -p  '{workspace}/tsconfig.json'");
+                $"\n  tsc -p  '{workspace}\\tsconfig.json'");
+
             Environment.Exit(0);
         }
 
@@ -132,30 +131,6 @@ namespace VsCodeTool
             return Path.Combine(path, $"{Path.Combine(arr.Where(p => p != "." && p != "..").ToArray()).Replace(".ts", "")}.ts");
         }
 
-        private static void JavascriptMinimizer(string[] args)
-        {
-            //    if (!Directory.Exists(args[1]))
-            //        Console.WriteLine("Created Directory! >> '" + Directory.CreateDirectory(args[1]).FullName + "'");
-            //    string str = Path.Combine(args[1], "min");
-            //    if (!Directory.Exists(str))
-            //        Console.WriteLine("Created Directory! >> '" + Directory.CreateDirectory(str).FullName + "'");
-            //    Config config = Config.ReadJavascriptConfig(Path.Combine(args[1], Program.jsMinimizerConfigFile));
-            //    File.WriteAllText(Path.Combine(str, config.OutputFile), "/* Developed by Kamran A-eff */");
-            //    Func<string, string> func;
-            //    foreach (string path in Enumerable.Select<string, string>((IEnumerable<string>)config.InputFiles, func ?? (func = (Func<string, string>)(f => Path.Combine(args[1], f)))))
-            //    {
-            //        if (!File.Exists(path))
-            //        {
-            //            Console.WriteLine("Can't find the file '" + path + "'!");
-            //        }
-            //        else
-            //        {
-            //            Console.WriteLine("Append the file '" + path + "'!");
-            //            File.AppendAllText(Path.Combine(str, config.OutputFile), Extension.ClearWithRegex(Extension.ClearWithRegex(Extension.ClearWithRegex(File.ReadAllText(path), "(//.*)", "/*$1*/"), "(\\r\\n|\\r|\\n)", ""), "\\s+", " "));
-            //        }
-            //    }
-        }
-        
         static string usingPattern = "import.*from\\s*[\',\"](?<logicalPath>.*)[\',\"].*;?\n?";
 
         private static void DeleteFile(string path)
