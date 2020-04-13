@@ -1,0 +1,148 @@
+@import 'reset';
+
+#timer {
+    display: inline-block;
+    border-radius: 7px;
+    overflow: hidden;
+    color: #ffffff;
+    font-family: sans-serif;
+    font-size: 2rem;
+
+    &>.hours,
+    &>.minutes,
+    &>.seconds {
+        float: left;
+        text-align: center;
+        min-width: 30px;
+        background-color: teal;
+        padding: 2px 4px;
+    }
+
+    &>.splitter {
+        float: left;
+        padding: 2px 4px;
+        background-color: orange;
+        font-weight: bolder;
+    }
+
+    &.running {
+        &>.splitter {
+            animation-name: timertick;
+            animation-duration: 1s;
+            animation-iteration-count: infinite;
+            animation-fill-mode: backwards;
+        }
+    }
+}
+
+@keyframes timertick {
+    from {
+        color: #ffffff;
+    }
+
+    to {
+        color: orange;
+    }
+}
+
+
+.meet {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+
+    &>video {
+        background: #222;
+        min-width: 100%;
+        min-height: 100%;
+    }
+
+    &>.controls {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        bottom: 4px;
+
+        &>li {
+            margin: 15px 5px;
+
+            &>a {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 35px;
+                height: 35px;
+                border-radius: 100%;
+                border: 1px solid #ffffff;
+                color: #ffffff;
+                font-family: "Font Awesome 5 Free";
+                font-weight: 900;
+                transition: all 0.3s;
+
+                &.microphone {
+                    &::before {
+                        content: '\f3c9';
+                        color: #ffffff;
+                        transition: all 0.3s;
+                    }
+
+                    &:hover,
+                    &.mute {
+                        border-color: #eb4d4b;
+
+                        &::before {
+                            content: '\f539';
+                            color: #eb4d4b;
+                        }
+                    }
+                }
+
+                &.call-end {
+                    &::before {
+                        content: '\f095';
+                        transform: rotate(-135deg);
+                    }
+
+                    &:hover {
+                        border-color: #eb4d4b;
+
+                        &::before {
+                            color: #eb4d4b;
+                        }
+                    }
+                }
+
+                &.camera {
+
+                    &::before {
+                        content: '\f03d';
+                        color: #ffffff;
+                    }
+
+                    &:hover,
+                    &.off {
+                        border-color: #eb4d4b;
+
+                        &::before {
+                            content: '\f4e2';
+                            color: #eb4d4b;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 320px) {
+    .meet {
+        &>video {
+            min-width: 100%;
+            min-height: 100%;
+        }
+    }
+}
