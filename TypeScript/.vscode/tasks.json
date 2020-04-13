@@ -5,7 +5,7 @@
             "label": "Union Typescript Files",
             "type": "shell",
             "windows": {
-                "command": "C:\\Users\\User\\source\\repos\\vscodetool\\VsCodeTool\\bin\\Debug\\vscodetool.exe",
+                "command": "I:\\GITHUB\\vscodetool\\VsCodeTool\\bin\\Debug\\vscodetool.exe",
                 "args": [
                     "${workspaceRoot}",
                     "sources\\ts",

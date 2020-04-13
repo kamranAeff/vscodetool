@@ -61,6 +61,56 @@
 > tsc app.ts   <kbd>OR</kbd>
 > tsc app.ts  --watch
 
+## Typescript Concat Modules
+### tasks.json
+<pre>
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Union Typescript Files",
+            "type": "shell",
+            "windows": {
+                "command": "{fullPath}\\vscodetool.exe",
+                "args": [
+                    "${workspaceRoot}",
+                    "sources\\ts",
+                    "sources\\ts\\build\\app.ts"
+                ]
+            },
+            "group": "build"
+        }
+    ]
+}
+</pre>
+
+### Typescript configuration file
+<pre>
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "System",
+    "lib": [
+      "DOM",
+      "es2015",
+      "es5"],
+    "types": ["jquery"],
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "forceConsistentCasingInFileNames": false,
+    "rootDir": "./",
+    "outFile": "./assets/js/app.js",
+    "baseUrl": "./",    
+    "declaration": false
+  },
+  "files": ["sources/ts/build/app.ts"],
+  "exclude": ["node_modules", "**/*.spec.ts"]
+}
+</pre> 
+
+## Include Jquery Module for TypeScript
+> npm install @types/jquery --save-dev
+
 
 
 # [Babel configuration](https://babeljs.io/setup#installation)
