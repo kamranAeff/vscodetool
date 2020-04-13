@@ -1,6 +1,6 @@
 # vscodetool
 
-<img src="./typescript/assets/img/screen.png" alt="Ekran görüntüsü"/>
+![Ekran görüntüsü](typescript/assets/img/screen.png)
 
 ## File Structure
 - assets
